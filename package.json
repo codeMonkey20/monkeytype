@@ -1,0 +1,25 @@
+{
+  "name": "vercel-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "concurrently \"nodemon --exec node api/index.js\"",
+    "build": "echo deployed",
+    "vercel-build": "echo deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.7"
+  }
+}
