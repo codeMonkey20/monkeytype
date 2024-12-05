@@ -5,9 +5,12 @@
   "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
-    "dev": "concurrently \"nodemon --exec node api/index.js\"",
+    "dev": "concurrently \"npm run server\" \"npm run less\" \"npm run js\" -n API,LESS,JS",
     "build": "echo deployed",
-    "vercel-build": "echo deploy"
+    "vercel-build": "echo deploy",
+    "less": "nodemon --exec \"lessc design/less/app.less public/css/app.css -x\"  --watch design/less --ext less",
+    "server": "nodemon --exec node api/index.js --watch api/ --ext js",
+    "js": "nodemon --exec bash jsminify --watch design/js --ext js"
   },
   "author": "",
   "license": "ISC",

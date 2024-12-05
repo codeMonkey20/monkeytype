@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const TestController = require("./controllers/test");
+const { PATH } = require("./constants");
 
-router.get("/testing", TestController.testing);
+router.get("/", (req, res) => res.sendFile("index.html", { root: PATH.PAGES }));
 
 module.exports = router;
