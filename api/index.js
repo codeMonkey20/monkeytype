@@ -5,7 +5,7 @@ const app = express();
 const { PATH } = require("./constants");
 
 app.use(express.static(PATH.PUBLIC));
-app.use(require("./routes"));
+app.use(require("./router"));
 app.listen(process.env.PORT, () => console.log("Server Running."));
 
 module.exports = app;

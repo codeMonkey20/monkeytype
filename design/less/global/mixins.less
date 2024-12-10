@@ -5,15 +5,15 @@
 }
 
 .borderradius(@br) {
-    border-radius:@br;
-    -moz-border-radius:@br;
-    -webkit-border-radius:@br;
+    border-radius: @br;
+    -moz-border-radius: @br;
+    -webkit-border-radius: @br;
 }
 
 .borderbox() {
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .bgsizecover() {
@@ -23,9 +23,9 @@
 }
 
 .transition(@trans) {
-    transition:@trans;
-    -moz-transition:@trans;
-    -webkit-transition:@trans;
+    transition: @trans;
+    -moz-transition: @trans;
+    -webkit-transition: @trans;
 }
 
 .rotate(@deg) {
@@ -35,18 +35,18 @@
 }
 
 .calculate(@property; @expression) {
-        @{property}: -webkit-calc(~'@{expression}');
-        @{property}: -moz-calc(~'@{expression}');
-        @{property}: calc(~'@{expression}');
+    @{property}: -webkit-calc(~'@{expression}');
+    @{property}: -moz-calc(~'@{expression}');
+    @{property}: calc(~'@{expression}');
 }
 
-.animate(@element; @duration:0.5s; @timing:ease) {
-    -webkit-animation:@arguments;
-    -moz-animation:@arguments;
-    animation:@arguments;
+.animate(@element; @duration: 0.5s; @timing: ease) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
 }
 
-.setcolumn(@count:1; @gap:10px) {
+.setcolumn(@count: 1; @gap: 10px) {
     -webkit-column-gap: @gap;
     -moz-column-gap: @gap;
     column-gap: @gap;
@@ -59,41 +59,49 @@
     content: @icon-code
 }
 
-.flexalignitem(@vertical:flex-start; @horizontal:flex-start; @direction:row) {
-    display: flex; 
-    justify-content:@horizontal;
-    align-items:@vertical;
+.flexalignitem(@vertical: flex-start; @horizontal: flex-start; @direction: row) {
+    display: flex;
+    justify-content: @horizontal;
+    align-items: @vertical;
     flex-direction: @direction;
 }
 
 .placeholdercolor(@color) {
-    &::placeholder { color:@color }
-    &:-ms-input-placeholder { color:@color }
-    &::-ms-input-placeholder { color:@color }
+    &::placeholder {
+        color: @color
+    }
+
+    &:-ms-input-placeholder {
+        color: @color
+    }
+
+    &::-ms-input-placeholder {
+        color: @color
+    }
 }
 
-.listreset(@padding:0; @margin:0) {
-    padding:@padding;
-    margin:@margin;
+.listreset(@padding: 0; @margin: 0) {
+    padding: @padding;
+    margin: @margin;
     list-style: none;
 }
 
 .inputextstyle(@border; @background; @padding) {
-    border:@border;
-    background:@background;
-    padding:@padding;
+    border: @border;
+    background: @background;
+    padding: @padding;
 }
 
 .overlaybg(@background; @opacity) {
-    background:@background;
-    opacity:@opacity;
+    background: @background;
+    opacity: @opacity;
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
-    content:'';
+    content: '';
 }
 
 .proportionedbox(@value) {
@@ -108,17 +116,15 @@
 
 }
 
-.heading(
-    @color:@secondary,
-    @fontsize:1.8rem,
-    @lineheight:2.2rem,
-    @alignment:center,
-    @weight:400,
-    @texttransform:uppercase
-) {
-    color:@color;
+.heading(@color: @secondary,
+    @fontsize: 1.8rem,
+    @lineheight: 2.2rem,
+    @alignment: center,
+    @weight: 400,
+    @texttransform: uppercase) {
+    color: @color;
     text-transform: @texttransform;
-    font-size:@fontsize;
+    font-size: @fontsize;
     line-height: @lineheight;
     font-weight: @weight;
     text-align: @alignment;
@@ -128,36 +134,40 @@
 
     &:before,
     &:after {
-      content: " ";
-      display: table;
+        content: " ";
+        display: table;
     }
-    &:after { clear: both; }
-  
+
+    &:after {
+        clear: both;
+    }
+
 }
 
 .heading_v_1(@background) {
-    margin-bottom:@base-space*3;
+    margin-bottom: @base-space*3;
 
     h2 {
         text-transform: uppercase;
-        color:@primary;
-        margin:0;
-        .flexalignitem(@vertical:center; @horizontal:center);
+        color: @primary;
+        margin: 0;
+        .flexalignitem(@vertical: center; @horizontal: center);
         font-weight: 400;
-        font-size:1.4rem;
+        font-size: 1.4rem;
         line-height: 1.6rem;
 
         strong {
-            background:@background;
-            padding:0 @base-space;
-            font-weight:400
+            background: @background;
+            padding: 0 @base-space;
+            font-weight: 400
         }
 
-        &:before, &:after {
-            content:'';
-            height:.1rem;
-            background:@primary;
-            width:@base-space*4;
+        &:before,
+        &:after {
+            content: '';
+            height: .1rem;
+            background: @primary;
+            width: @base-space*4;
         }
 
     }
@@ -177,17 +187,27 @@
     @media (min-width:@min-md) {
 
         .wrap {
-            .flexalignitem(@vertical:unset; @horizontal:space-between);
+            .flexalignitem(@vertical: unset; @horizontal: space-between);
         }
 
         .item {
 
-            .left { order: 1 }
-            .right { order: 2;}
+            .left {
+                order: 1
+            }
+
+            .right {
+                order: 2;
+            }
 
             &:nth-child(even) {
-                .left { order: 2 }
-                .right { order: 1;}
+                .left {
+                    order: 2
+                }
+
+                .right {
+                    order: 1;
+                }
             }
 
         }
@@ -196,60 +216,50 @@
 
 }
 
-.lib-css(
-    @_property,
+.lib-css(@_property,
     @_value,
-    @_prefix: 0
-) when (@_prefix = 1)
-  and not (@_value = '')
-  and not (@_value = false)
-  and not (extract(@_value, 1) = false)
-  and not (extract(@_value, 2) = false)
-  and not (extract(@_value, 3) = false)
-  and not (extract(@_value, 4) = false)
-  and not (extract(@_value, 5) = false) {
-  -webkit-@{_property}: @_value;
-       -moz-@{_property}: @_value;
-        -ms-@{_property}: @_value;
+    @_prefix: 0) when (@_prefix =1) and not (@_value ='') and not (@_value =false) and not (extract(@_value, 1)=false) and not (extract(@_value, 2)=false) and not (extract(@_value, 3)=false) and not (extract(@_value, 4)=false) and not (extract(@_value, 5)=false) {
+    -webkit-@{_property}: @_value;
+    -moz-@{_property}: @_value;
+    -ms-@{_property}: @_value;
 }
 
 .lib-vendor-prefix-display(@_value: flex) {
-    display: ~"-webkit-@{_value}";
-    display: ~"-ms-@{_value}box";
+    display:~"-webkit-@{_value}";
+    display:~"-ms-@{_value}box";
     display: @_value;
 }
 
-.lib-vendor-prefix-flex-direction (
-    @_value: column
-) {
+.lib-vendor-prefix-flex-direction (@_value: column) {
     -webkit-flex-direction: @_value;
-        -ms-flex-direction: @_value;
-            flex-direction: @_value;
+    -ms-flex-direction: @_value;
+    flex-direction: @_value;
 }
 
-.lib-vendor-prefix-flex-grow(
-    @_value: 0
-) {
+.lib-vendor-prefix-flex-grow(@_value: 0) {
     -webkit-flex-grow: @_value;
-            flex-grow: @_value;
+    flex-grow: @_value;
 }
 
-.lib-vendor-prefix-flex-shrink (
-    @_value: 1
-) {
+.lib-vendor-prefix-flex-shrink (@_value: 1) {
     -webkit-flex-shrink: @_value;
-            flex-shrink: @_value;
+    flex-shrink: @_value;
 }
 
 .borderbottom(@height; @background; @bottom) {
-    position:relative;
+    position: relative;
+
     &:after {
-        content:'';
-        height:@height;
+        content: '';
+        height: @height;
         .calculate(width, '100% - (@{base-space}*2)');
-        position:absolute;
-        left:@base-space;
-        bottom:@bottom;
-        background-color:@background
+        position: absolute;
+        left: @base-space;
+        bottom: @bottom;
+        background-color: @background
     }
+}
+
+.hidden {
+    display: none;
 }
