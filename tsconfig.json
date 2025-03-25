@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./public/js/",
+		"module": "ES2022",
+		"target": "ES2022",
+		"noImplicitAny": true,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"paths": {
+			"@/*": ["design/*"]
+		}
+	}
+}

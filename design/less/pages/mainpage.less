@@ -1,83 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-main {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#caret {
-    display: inline-block;
-    border-radius: 9999px;
-    width: 2px;
-    height: 2em;
-    background-color: @black;
-    animation: caret-blink 1s infinite;
-    transition: left 0.08s ease-in-out;
-    position: absolute;
-    left: 0;
-}
-
-#words-wrapper {
-    position: relative;
-    font-size: 16px;
-}
-
-#blurred-message {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.1s ease-in-out;
-}
-
-#words {
-    display: flex;
-    flex-wrap: wrap;
-    transition: all 0.1s ease-in-out;
-
-    &.blurred {
-        filter: blur(4px);
+#main-page {
+    >* {
+        max-width: @min-sm;
+        margin: 0 auto;
+        padding: 0 @spacing;
     }
 
-    .word {
-        &.active {}
+    header {
+        height: 80px;
+    }
 
-        &.typed {}
+    main {
+        #words-wrapper {
+            position: relative;
+            margin: 4em 0;
 
-        .letter {
-            font-family: monospace;
-            font-size: 2em;
-            user-select: none;
-            color: @gray8;
-
-
-            &.correct {
-                color: @black;
+            #blurred-message {
+                font-weight: bold;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
-            &.incorrect {
-                color: red;
+            #words-input {
+                display: block;
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                opacity: 0;
             }
         }
     }
-}
 
+    @media (min-width: @min-md) {
+        >* {
+            max-width: @min-md;
+        }
+    }
 
+    @media (min-width: @min-lg) {
+        >* {
+            max-width: @min-lg;
+        }
+    }
 
-#words-input {
-    display: block;
-    opacity: 0;
+    @media (min-width: @min-xl) {
+        >* {
+            max-width: @min-xl;
+        }
+    }
 }

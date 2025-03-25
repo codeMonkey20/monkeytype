@@ -1,9 +1,0 @@
-#!/bin/bash
-
-base_dir="design"
-
-find "$base_dir" -type f -name "*.js" | while read -r file; do
-    filename=$(basename "$file")
-    uglifyjs --compress --mangle -- $file > public/js/$filename
-    echo minified: "$file"
-done
