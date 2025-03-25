@@ -1,0 +1,60 @@
+#config {
+    justify-content: center;
+    align-items: center;
+    background: var(--sub-alt-color);
+    color: var(--sub-color);
+    max-width: max-content;
+    margin: 0 auto;
+    .calculate(font-size, '6em / 7');
+    border-radius: .5em;
+    display: none;
+
+    button.config {
+        display: inline-flex;
+        align-items: center;
+        gap: .5em;
+        padding: .75em;
+        text-align: center;
+        height: min-content;
+        line-height: 1.25;
+        appearance: none;
+        border: none;
+
+        &>* {
+            .transition(@base-transition);
+        }
+
+        .icon::after {
+            background-color: var(--sub-color);
+        }
+
+        &:hover,
+        &.active:hover {
+            color: var(--text-color);
+
+            .icon::after {
+                background-color: var(--text-color);
+            }
+        }
+
+        &.active {
+            color: var(--main-color);
+
+            .icon::after {
+                background-color: var(--main-color);
+            }
+        }
+    }
+
+    button.config:first-child {
+        margin: 0 0 0 .75em;
+    }
+
+    button.config:last-child {
+        margin: 0 .75em 0 0;
+    }
+
+    @media (min-width: @min-md) {
+        display: flex;
+    }
+}

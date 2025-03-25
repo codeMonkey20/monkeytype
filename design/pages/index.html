@@ -3,36 +3,59 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-		<script src="/js/jquery.js"></script>
-		<script src="/js/jqueryformplugin.js"></script>
-		<script src="/js/functions.js"></script>
-		<link rel="stylesheet" href="/css/app.css" />
 		<title>Monkeytype Clone</title>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="preload" href="/fonts/RobotoMono.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="stylesheet" href="/css/fonts.css" />
+		<link rel="stylesheet" href="/css/icons.css" />
+		<link rel="stylesheet" href="/css/app.css" />
 	</head>
-	<body>
+	<body id="main-page" data-theme="dev">
 		<header>
 			<h1></h1>
 		</header>
 		<main>
-			<div id="type-wrapper">
-				<form action="/api/words" method="get" name="game-settings" id="game-settings">
-					<select name="type">
-						<option value="easy" selected>Easy</option>
-						<option value="medium">Medium</option>
-						<option value="hard">Hard</option>
-						<option value="wow">Wow!</option>
-						<option value="quotes">Quotes</option>
-					</select>
-					<select name="count">
-						<option value="10" selected>10</option>
-						<option value="15">15</option>
-						<option value="20">20</option>
-						<option value="30">30</option>
-						<option value="40">40</option>
-					</select>
-				</form>
+			<div id="config">
+				<div class="punctuation-numbers">
+					<button class="config punctuation">
+						<i class="icon punctuation"></i>
+						<span>punctuation</span>
+					</button>
+					<button class="config numbers">
+						<i class="icon numbers"></i>
+						<span>numbers</span>
+					</button>
+				</div>
+				<div class="spacer first"></div>
+				<div class="mode radio-group">
+					<button class="config time radio" value="time">
+						<i class="icon time"></i>
+						<span>time</span>
+					</button>
+					<button class="config words radio active" value="words">
+						<i class="icon words"></i>
+						<span>words</span>
+					</button>
+					<button class="config quote radio" value="quotes">
+						<i class="icon quote"></i>
+						<span>quote</span>
+					</button>
+				</div>
+				<div class="spacer second"></div>
+				<div class="word-count radio-group">
+					<button class="config count radio" value="10">10</button>
+					<button class="config count radio" value="25">25</button>
+					<button class="config count radio active" value="50">50</button>
+					<button class="config count radio" value="100">100</button>
+					<button class="config count custom radio" value="custom">custom</button>
+				</div>
+				<div class="duration" style="display: none;">
+					<button class="config count radio" value="10">10</button>
+					<button class="config count radio active" value="30">30</button>
+					<button class="config count radio" value="60">60</button>
+					<button class="config count radio" value="120">120</button>
+					<button class="config count custom radio" value="custom">custom</button>
+				</div>
 			</div>
 			<div id="words-wrapper">
 				<span id="blurred-message" class="hidden">Click here to focus</span>
@@ -40,6 +63,7 @@
 				<div id="caret"></div>
 				<div id="words"></div>
 			</div>
+			<div id="keymap"></div>
 		</main>
 		<footer></footer>
 	</body>

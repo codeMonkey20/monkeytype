@@ -1,0 +1,28 @@
+i.icon::after{
+    width: 1em;
+    height: 1em;
+    display: block;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    content: '';
+}
+i.icon.numbers::after{
+    -webkit-mask: url('/svg/numbers.svg') no-repeat 50% 50%;
+    mask: url('/svg/numbers.svg') no-repeat 50% 50%;
+}
+i.icon.punctuation::after{
+    -webkit-mask: url('/svg/punctuation.svg') no-repeat 50% 50%;
+    mask: url('/svg/punctuation.svg') no-repeat 50% 50%;
+}
+i.icon.quote::after{
+    -webkit-mask: url('/svg/quote.svg') no-repeat 50% 50%;
+    mask: url('/svg/quote.svg') no-repeat 50% 50%;
+}
+i.icon.time::after{
+    -webkit-mask: url('/svg/time.svg') no-repeat 50% 50%;
+    mask: url('/svg/time.svg') no-repeat 50% 50%;
+}
+i.icon.words::after{
+    -webkit-mask: url('/svg/words.svg') no-repeat 50% 50%;
+    mask: url('/svg/words.svg') no-repeat 50% 50%;
+}

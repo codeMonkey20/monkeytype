@@ -1,0 +1,40 @@
+#words {
+    --correct-letter-color: var(--text-color);
+    --untyped-letter-color: var(--sub-color);
+    --incorrect-letter-color: var(--error-color);
+    --extra-letter-color: var(--error-extra-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: .5em;
+    margin: 0 -@half-spacing;
+    overflow: visible clip;
+
+    &.blurred {
+        filter: blur(4px);
+    }
+
+    .word {
+        margin: 0 @half-spacing;
+
+        .letter {
+            font-family: monospace;
+            user-select: none;
+            font-size: @font-sm;
+            line-height: normal;
+            color: var(--untyped-letter-color);
+
+            &.correct {
+                color: var(--correct-letter-color);
+            }
+
+            &.incorrect {
+                color: var(--incorrect-letter-color);
+            }
+
+            @media (min-width: @min-md) {
+                font-size: @font-base;
+            }
+        }
+    }
+}
